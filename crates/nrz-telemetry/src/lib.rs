@@ -257,8 +257,8 @@ mod tests {
     };
 
     use nrz_api_client::telemetry::TelemetryClient;
-    use nrz_ui::ColorConfig;
     use nrz_khulnasoft_api::telemetry::{TelemetryEvent, TelemetryGenericEvent};
+    use nrz_ui::ColorConfig;
     use nrzpath::AbsoluteSystemPathBuf;
     use tokio::{
         select,

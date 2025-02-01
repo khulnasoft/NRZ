@@ -3858,9 +3858,9 @@ dependencies = [
  "lazy_static",
  "nrz-api-client",
  "nrz-dirs",
- "nrz-ui",
  "nrz-khulnasoft-api",
  "nrz-khulnasoft-api-mock",
+ "nrz-ui",
  "nrzpath",
  "port_scanner",
  "reqwest",
@@ -4012,6 +4012,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "nrz-khulnasoft-api"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "insta",
+ "serde",
+ "serde_json",
+ "test-case",
+ "url",
+]
+
+[[package]]
+name = "nrz-khulnasoft-api-mock"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum 0.7.9",
+ "axum-server 0.4.7",
+ "futures-util",
+ "nrz-khulnasoft-api",
+ "port_scanner",
+ "tempfile",
+ "tokio",
+]
+
+[[package]]
 name = "nrz-lib"
 version = "0.1.0"
 dependencies = [
@@ -4076,6 +4102,8 @@ dependencies = [
  "nrz-filewatch",
  "nrz-fs",
  "nrz-graph-utils",
+ "nrz-khulnasoft-api",
+ "nrz-khulnasoft-api-mock",
  "nrz-lockfiles",
  "nrz-microfrontends",
  "nrz-repository",
@@ -4085,8 +4113,6 @@ dependencies = [
  "nrz-ui",
  "nrz-unescape",
  "nrz-updater",
- "nrz-khulnasoft-api",
- "nrz-khulnasoft-api-mock",
  "nrzpath",
  "num_cpus",
  "owo-colors",
@@ -4289,9 +4315,9 @@ dependencies = [
  "nrz-api-client",
  "nrz-ci",
  "nrz-dirs",
- "nrz-ui",
  "nrz-khulnasoft-api",
  "nrz-khulnasoft-api-mock",
+ "nrz-ui",
  "nrzpath",
  "once_cell",
  "reqwest",
@@ -4388,32 +4414,6 @@ dependencies = [
  "serde",
  "thiserror 1.0.69",
  "update-informer",
-]
-
-[[package]]
-name = "nrz-khulnasoft-api"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "insta",
- "serde",
- "serde_json",
- "test-case",
- "url",
-]
-
-[[package]]
-name = "nrz-khulnasoft-api-mock"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum 0.7.9",
- "axum-server 0.4.7",
- "futures-util",
- "nrz-khulnasoft-api",
- "port_scanner",
- "tempfile",
- "tokio",
 ]
 
 [[package]]

@@ -1,36 +1,16 @@
 {
   "name": "@nrz/workspaces",
-  "version": "2.4.0",
   "description": "Tools for working with package managers",
-  "homepage": "https://nrz.build/repo",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/khulnasoft/nrz",
-    "directory": "packages/nrz-workspaces"
-  },
-  "bugs": {
-    "url": "https://github.com/khulnasoft/nrz/issues"
-  },
+  "version": "2.4.0",
   "bin": "dist/cli.js",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "jest",
-    "lint": "eslint src/",
-    "check-types": "tsc --noEmit",
-    "lint:prettier": "prettier -c . --cache --ignore-path=../../.prettierignore"
-  },
+  "bugs": "https://github.com/khulnasoft/nrz/issues",
   "dependencies": {
-    "commander": "^10.0.0",
-    "execa": "5.1.1",
+    "commander": "^11.0.0",
+    "execa": "^8.0.1",
     "fast-glob": "^3.2.12",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.1.1",
     "gradient-string": "^2.0.0",
-    "inquirer": "^8.0.0",
+    "inquirer": "^8.2.4",
     "js-yaml": "^4.1.0",
     "ora": "4.1.1",
     "picocolors": "1.0.1",
@@ -39,25 +19,43 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
-    "@nrz/eslint-config": "workspace:*",
-    "@nrz/test-utils": "workspace:*",
-    "@nrz/tsconfig": "workspace:*",
-    "@nrz/utils": "workspace:*",
+    "@nrz/eslint-config": "0.0.0",
+    "@nrz/test-utils": "0.0.0",
+    "@nrz/tsconfig": "0.0.0",
+    "@nrz/utils": "0.0.0",
     "@types/fs-extra": "^9.0.13",
     "@types/gradient-string": "^1.1.2",
-    "@types/inquirer": "^7.3.1",
+    "@types/inquirer": "^8.2.5",
     "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.17.2",
+    "@types/node": "22.7.8",
     "@types/semver": "7.5.8",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
-    "tsup": "^5.10.3",
+    "tsup": "^6.7.0",
     "typescript": "5.5.4"
   },
   "files": [
     "dist"
   ],
+  "homepage": "https://nrz.build/repo",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft/nrz",
+    "directory": "packages/nrz-workspaces"
+  },
+  "scripts": {
+    "build": "tsup",
+    "check-types": "tsc --noEmit",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "lint:prettier": "prettier -c . --cache --ignore-path=../../.prettierignore",
+    "test": "jest"
+  },
+  "types": "dist/index.d.ts"
 }

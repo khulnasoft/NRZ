@@ -1,9 +1,9 @@
 {
   "name": "nrz-tests-helpers",
+  "dependencies": {
+    "@nrz/workspaces": "2.4.0"
+  },
   "scripts": {
     "test": ""
-  },
-  "dependencies": {
-    "@nrz/workspaces": "workspace:*"
   }
 }

@@ -715,8 +715,8 @@ pub enum Command {
         #[clap(long)]
         experimental_write_cache: bool,
     },
-    /// Unlink the current directory from your Khulnasoft organization and disable
-    /// Remote Caching
+    /// Unlink the current directory from your Khulnasoft organization and
+    /// disable Remote Caching
     Unlink {
         /// Specify what should be unlinked (default "remote cache")
         #[clap(long, value_enum, default_value_t = LinkTarget::RemoteCache)]

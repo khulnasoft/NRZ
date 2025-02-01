@@ -1,10 +1,10 @@
 {
   "name": "@nrz-examples-tests/basic-pnpm",
+  "dependencies": {
+    "nrz-examples": "workspace:*",
+    "nrz-tests-helpers": "workspace:*"
+  },
   "scripts": {
     "test": "bash ./node_modules/nrz-tests-helpers/setup_example_test.sh basic pnpm"
-  },
-  "dependencies": {
-    "nrz-tests-helpers": "workspace:*",
-    "nrz-examples": "workspace:*"
   }
 }

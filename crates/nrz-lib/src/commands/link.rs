@@ -15,10 +15,10 @@ use dialoguer::Confirm;
 use dialoguer::FuzzySelect;
 use dirs_next::home_dir;
 use nrz_api_client::{CacheClient, Client};
+use nrz_khulnasoft_api::{CachingStatus, Space, Team};
 #[cfg(not(test))]
 use nrz_ui::CYAN;
 use nrz_ui::{DialoguerTheme, BOLD, GREY};
-use nrz_khulnasoft_api::{CachingStatus, Space, Team};
 #[cfg(test)]
 use rand::Rng;
 use thiserror::Error;
@@ -94,7 +94,8 @@ pub(crate) const REMOTE_CACHING_INFO: &str =
      developers and CI/CD systems.\n\nBuild and deploy faster.";
 pub(crate) const REMOTE_CACHING_URL: &str =
     "https://nrz.build/repo/docs/core-concepts/remote-caching";
-pub(crate) const SPACES_URL: &str = "https://khulnasoft.com/docs/workflow-collaboration/khulnasoft-spaces";
+pub(crate) const SPACES_URL: &str =
+    "https://khulnasoft.com/docs/workflow-collaboration/khulnasoft-spaces";
 
 /// Verifies that caching status for a team is enabled, or prompts the user to
 /// enable it.
@@ -128,8 +129,10 @@ pub(crate) async fn verify_caching_enabled<'a>(
             if should_enable {
                 match selected_team {
                     Some(SelectedTeam::Team(team)) if team.is_owner() => {
-                        let url =
-                            format!("https://khulnasoft.com/teams/{}/settings/billing", team.slug);
+                        let url = format!(
+                            "https://khulnasoft.com/teams/{}/settings/billing",
+                            team.slug
+                        );
 
                         enable_caching(&url)?;
                     }
@@ -144,8 +147,10 @@ pub(crate) async fn verify_caching_enabled<'a>(
                             .await
                             .map_err(|err| Error::TeamRequest(err, team_id.to_string()))?
                             .ok_or_else(|| Error::TeamNotFound(team_id.to_string()))?;
-                        let url =
-                            format!("https://khulnasoft.com/teams/{}/settings/billing", team.slug);
+                        let url = format!(
+                            "https://khulnasoft.com/teams/{}/settings/billing",
+                            team.slug
+                        );
 
                         enable_caching(&url)?;
                     }
@@ -511,7 +516,8 @@ fn should_link_spaces(base: &CommandBase, location: &str) -> Result<bool, Error>
             .apply(BOLD.apply_to("Would you like to link")),
         base.color_config
             .apply(BOLD.apply_to(CYAN.apply_to(location))),
-        base.color_config.apply(BOLD.apply_to("to Khulnasoft Spaces")),
+        base.color_config
+            .apply(BOLD.apply_to("to Khulnasoft Spaces")),
     );
 
     Confirm::new()
@@ -585,8 +591,8 @@ mod test {
     use std::fs;
 
     use anyhow::Result;
-    use nrz_ui::ColorConfig;
     use nrz_khulnasoft_api_mock::start_test_server;
+    use nrz_ui::ColorConfig;
     use nrzpath::AbsoluteSystemPathBuf;
     use tempfile::{NamedTempFile, TempDir};
 

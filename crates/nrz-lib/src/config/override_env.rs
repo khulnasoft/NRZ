@@ -90,7 +90,9 @@ impl From<Input> for Output {
             }
         }
         // if there's both Khulnasoft items, we use those next
-        else if input.KHULNASOFT_ARTIFACTS_TOKEN.is_some() && input.KHULNASOFT_ARTIFACTS_OWNER.is_some() {
+        else if input.KHULNASOFT_ARTIFACTS_TOKEN.is_some()
+            && input.KHULNASOFT_ARTIFACTS_OWNER.is_some()
+        {
             Output {
                 team_id: input.KHULNASOFT_ARTIFACTS_OWNER,
                 team_slug: input.NRZ_TEAM, /* this may or may not be Some, but if it is we can
@@ -252,7 +254,9 @@ mod test {
                 .team_slug(NRZ_TEAM)
                 .token(NRZ_TOKEN),
             TestCase::new()
-                .reason("if we have a 3rd party trifecta, that wins, even against a Khulnasoft Pair")
+                .reason(
+                    "if we have a 3rd party trifecta, that wins, even against a Khulnasoft Pair",
+                )
                 .NRZ_TEAM()
                 .NRZ_TEAMID()
                 .NRZ_TOKEN()
@@ -262,7 +266,9 @@ mod test {
                 .team_slug(NRZ_TEAM)
                 .token(NRZ_TOKEN),
             TestCase::new()
-                .reason("a 3rd party trifecta wins against a partial Khulnasoft (just artifacts token)")
+                .reason(
+                    "a 3rd party trifecta wins against a partial Khulnasoft (just artifacts token)",
+                )
                 .NRZ_TEAM()
                 .NRZ_TEAMID()
                 .NRZ_TOKEN()
@@ -271,7 +277,9 @@ mod test {
                 .team_slug(NRZ_TEAM)
                 .token(NRZ_TOKEN),
             TestCase::new()
-                .reason("a 3rd party trifecta wins against a partial Khulnasoft (just artifacts owner)")
+                .reason(
+                    "a 3rd party trifecta wins against a partial Khulnasoft (just artifacts owner)",
+                )
                 .NRZ_TEAM()
                 .NRZ_TEAMID()
                 .NRZ_TOKEN()
@@ -290,8 +298,8 @@ mod test {
                 .token(NRZ_TOKEN),
             TestCase::new()
                 .reason(
-                    "a NRZ_TEAM+NRZ_TOKEN pair wins against an incomplete Khulnasoft (just artifacts \
-                     token)",
+                    "a NRZ_TEAM+NRZ_TOKEN pair wins against an incomplete Khulnasoft (just \
+                     artifacts token)",
                 )
                 .NRZ_TEAM()
                 .NRZ_TOKEN()

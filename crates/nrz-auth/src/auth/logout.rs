@@ -5,7 +5,8 @@ use nrzpath::AbsoluteSystemPath;
 use tracing::error;
 
 use crate::{
-    Error, LogoutOptions, Token, NRZ_TOKEN_DIR, NRZ_TOKEN_FILE, KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE,
+    Error, LogoutOptions, Token, KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE, NRZ_TOKEN_DIR,
+    NRZ_TOKEN_FILE,
 };
 
 pub async fn logout<T: TokenClient>(options: &LogoutOptions<T>) -> Result<(), Error> {
@@ -63,7 +64,8 @@ impl<T: TokenClient> LogoutOptions<T> {
 
         if let Some(khulnasoft_config_dir) = khulnasoft_config_dir()? {
             self.try_remove_token(
-                &khulnasoft_config_dir.join_components(&[KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE]),
+                &khulnasoft_config_dir
+                    .join_components(&[KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE]),
             )
             .await?;
         }
@@ -82,11 +84,11 @@ mod tests {
     use std::backtrace::Backtrace;
 
     use nrz_api_client::Client;
-    use nrz_ui::ColorConfig;
     use nrz_khulnasoft_api::{
         token::ResponseTokenMetadata, SpacesResponse, Team, TeamsResponse, UserResponse,
         VerifiedSsoUser,
     };
+    use nrz_ui::ColorConfig;
     use nrzpath::AbsoluteSystemPathBuf;
     use reqwest::{RequestBuilder, Response};
     use tempfile::tempdir;

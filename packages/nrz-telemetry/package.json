@@ -1,29 +1,9 @@
 {
   "name": "@nrz/telemetry",
-  "version": "0.0.0",
-  "private": true,
   "description": "",
-  "homepage": "https://nrz.build/repo",
-  "keywords": [],
+  "version": "0.0.0",
   "author": "KhulnaSoft",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/khulnasoft/nrz",
-    "directory": "packages/nrz-telemetry"
-  },
-  "bugs": {
-    "url": "https://github.com/khulnasoft/nrz/issues"
-  },
-  "module": "src/index.ts",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "scripts": {
-    "test": "node --import tsx --test src/*.test.ts",
-    "lint": "eslint src/",
-    "check-types": "tsc --noEmit",
-    "lint:prettier": "prettier -c . --cache --ignore-path=../../.prettierignore"
-  },
+  "bugs": "https://github.com/khulnasoft/nrz/issues",
   "dependencies": {
     "ci-info": "^4.0.0",
     "got": "^11.8.6",
@@ -31,17 +11,35 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@nrz/eslint-config": "workspace:*",
-    "@nrz/test-utils": "workspace:*",
-    "@nrz/tsconfig": "workspace:*",
-    "@nrz/types": "workspace:*",
-    "@nrz/utils": "workspace:*",
-    "@types/node": "^20.11.30",
+    "@nrz/eslint-config": "0.0.0",
+    "@nrz/test-utils": "0.0.0",
+    "@nrz/tsconfig": "0.0.0",
+    "@nrz/types": "2.4.0",
+    "@nrz/utils": "0.0.0",
+    "@types/node": "22.7.8",
     "dirs-next": "0.0.1-canary.1",
     "tsx": "4.19.1",
     "typescript": "5.5.4"
   },
+  "homepage": "https://nrz.build/repo",
+  "keywords": [],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
   "peerDependencies": {
     "commander": "^11.0.0"
-  }
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft/nrz",
+    "directory": "packages/nrz-telemetry"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src/",
+    "lint:prettier": "prettier -c . --cache --ignore-path=../../.prettierignore",
+    "test": "node --import tsx --test src/*.test.ts"
+  },
+  "types": "src/index.ts"
 }

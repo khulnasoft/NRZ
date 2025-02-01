@@ -1,4 +1,4 @@
-use nrz_auth::{NRZ_TOKEN_DIR, NRZ_TOKEN_FILE, KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE};
+use nrz_auth::{KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE, NRZ_TOKEN_DIR, NRZ_TOKEN_FILE};
 use nrz_dirs::{config_dir, khulnasoft_config_dir};
 use nrzpath::{AbsoluteSystemPath, AbsoluteSystemPathBuf};
 
@@ -92,7 +92,8 @@ fn global_config_path() -> Result<AbsoluteSystemPathBuf, Error> {
 fn global_auth_path() -> Result<AbsoluteSystemPathBuf, Error> {
     let khulnasoft_config_dir = khulnasoft_config_dir()?.ok_or(Error::NoGlobalConfigDir)?;
     // Check for both Khulnasoft and Nrz paths. Khulnasoft takes priority.
-    let khulnasoft_path = khulnasoft_config_dir.join_components(&[KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE]);
+    let khulnasoft_path =
+        khulnasoft_config_dir.join_components(&[KHULNASOFT_TOKEN_DIR, KHULNASOFT_TOKEN_FILE]);
     if khulnasoft_path.exists() {
         return Ok(khulnasoft_path);
     }

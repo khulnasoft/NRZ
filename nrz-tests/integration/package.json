@@ -1,18 +1,18 @@
 {
   "name": "nrz-tests-integration",
-  "scripts": {
-    "test": "prysk tests",
-    "clean": "rm -rf tests/**/*.t.err",
-    "test:interactive": "PRYSK_INTERACTIVE=true prysk tests",
-    "test:parallel": ".cram_env/bin/pytest -n auto tests --prysk-shell=`which bash`",
-    "pretest:parallel": ".cram_env/bin/pip3 install --quiet pytest \"prysk[pytest-plugin]\" pytest-xdist"
-  },
   "dependencies": {
-    "nrz-tests-helpers": "workspace:*",
     "@nrz/exe-stub": "workspace:*",
+    "nrz-tests-helpers": "workspace:*",
     "prysk": "workspace:*"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
+  },
+  "scripts": {
+    "clean": "rm -rf tests/**/*.t.err",
+    "pretest:parallel": ".cram_env/bin/pip3 install --quiet pytest \"prysk[pytest-plugin]\" pytest-xdist",
+    "test": "prysk tests",
+    "test:interactive": "PRYSK_INTERACTIVE=true prysk tests",
+    "test:parallel": ".cram_env/bin/pytest -n auto tests --prysk-shell=`which bash`"
   }
 }

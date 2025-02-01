@@ -60,7 +60,8 @@ pub async fn login<T: Client + TokenClient + CacheClient>(
             {
                 return Ok(token);
             }
-        // If the user is logging into Khulnasoft, check for an existing `vc` token.
+        // If the user is logging into Khulnasoft, check for an existing `vc`
+        // token.
         } else if login_url_configuration.contains("khulnasoft.com") {
             // The extraction can return an error, but we don't want to fail the login if
             // the token is not found.

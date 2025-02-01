@@ -72,8 +72,9 @@ pub enum Error {
 }
 
 // NOTE: When changing this, please ensure that the server side is updated to
-// handle the new version on khulnasoft.com this is required to ensure safe handling
-// of env vars (unknown run summary versions will be ignored on the server)
+// handle the new version on khulnasoft.com this is required to ensure safe
+// handling of env vars (unknown run summary versions will be ignored on the
+// server)
 const RUN_SUMMARY_SCHEMA_VERSION: &str = "1";
 
 #[derive(Debug)]

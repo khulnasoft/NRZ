@@ -1,59 +1,21 @@
 {
   "name": "nrz-vsc",
-  "displayName": "Nrz LSP",
-  "version": "2.0.0",
   "description": "Tools and instant feedback for your build system",
-  "main": "out/main.js",
-  "publisher": "Khulnasoft",
-  "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --main-fields=module,main --outfile=out/main.js --external:vscode --format=cjs --platform=node",
-    "esbuild": "npm run esbuild-base -- --sourcemap",
-    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
-    "package": "pnpm vsce package --no-dependencies --baseContentUrl https://github.com/khulnasoft/nrz/raw/HEAD/packages/nrz-vsc",
-    "publish": "pnpm vsce publish --no-dependencies --baseContentUrl https://github.com/khulnasoft/nrz/raw/HEAD/packages/nrz-vsc",
-    "copy-darwin-arm64": "cp out/artifacts/nrz-lsp-aarch64-apple-darwin/nrz-lsp out/nrz-lsp-darwin-arm64 && chmod +x out/nrz-lsp-darwin-arm64",
-    "copy-darwin-x64": "cp out/artifacts/nrz-lsp-x86_64-apple-darwin/nrz-lsp out/nrz-lsp-darwin-x64 && chmod +x out/nrz-lsp-darwin-x64",
-    "copy-win32-x64": "cp out/artifacts/nrz-lsp-x86_64-pc-windows-msvc/nrz-lsp.exe out/nrz-lsp-win32-x64.exe",
-    "copy-linux-arm64": "cp out/artifacts/nrz-lsp-aarch64-unknown-linux-musl/nrz-lsp out/nrz-lsp-linux-arm64 && chmod +x out/nrz-lsp-linux-arm64",
-    "copy-linux-x64": "cp out/artifacts/nrz-lsp-x86_64-unknown-linux-musl/nrz-lsp out/nrz-lsp-linux-x64 && chmod +x out/nrz-lsp-linux-x64",
-    "copy": "pnpm run copy-darwin-arm64 && pnpm run copy-darwin-x64 && pnpm run copy-win32-x64 && pnpm run copy-linux-arm64 && pnpm run copy-linux-x64",
-    "test-compile": "tsc -p ./"
-  },
-  "keywords": [
-    "nrz",
-    "nrz",
-    "monorepo",
-    "khulnasoft"
+  "version": "2.0.0",
+  "author": "KhulnaSoft",
+  "activationEvents": [
+    "workspaceContains:**/nrz.json"
   ],
-  "readme": "README.md",
+  "bugs": "https://github.com/khulnasoft/nrz/issues",
+  "capabilities": {
+    "virtualWorkspaces": {
+      "supported": "limited",
+      "description": "The language server requires a nrz daemon to function correctly."
+    }
+  },
   "categories": [
     "Linters"
   ],
-  "icon": "resources/icon.png",
-  "bugs": {
-    "url": "https://github.com/khulnasoft/nrz/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/khulnasoft/nrz",
-    "directory": "packages/nrz-vsc"
-  },
-  "author": "KhulnaSoft",
-  "license": "MIT",
-  "dependencies": {
-    "jsonc-parser": "^3.2.0",
-    "vscode-languageclient": "^9.0.1"
-  },
-  "engines": {
-    "vscode": "^1.84.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20.9.0",
-    "@types/vscode": "^1.84.1",
-    "esbuild": "^0.15.0",
-    "@nrz/tsconfig": "workspace:*"
-  },
   "contributes": {
     "commands": [
       {
@@ -90,13 +52,49 @@
       }
     }
   },
-  "capabilities": {
-    "virtualWorkspaces": {
-      "supported": "limited",
-      "description": "The language server requires a nrz daemon to function correctly."
-    }
+  "dependencies": {
+    "jsonc-parser": "^3.2.0",
+    "vscode-languageclient": "^9.0.1"
   },
-  "activationEvents": [
-    "workspaceContains:**/nrz.json"
-  ]
+  "devDependencies": {
+    "@nrz/tsconfig": "0.0.0",
+    "@types/node": "22.7.8",
+    "@types/vscode": "^1.84.1",
+    "esbuild": "^0.15.0"
+  },
+  "displayName": "Nrz LSP",
+  "engines": {
+    "vscode": "^1.84.2"
+  },
+  "icon": "resources/icon.png",
+  "keywords": [
+    "khulnasoft",
+    "monorepo",
+    "nrz",
+    "nrz"
+  ],
+  "license": "MIT",
+  "main": "out/main.js",
+  "publisher": "Khulnasoft",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft/nrz",
+    "directory": "packages/nrz-vsc"
+  },
+  "scripts": {
+    "copy": "pnpm run copy-darwin-arm64 && pnpm run copy-darwin-x64 && pnpm run copy-win32-x64 && pnpm run copy-linux-arm64 && pnpm run copy-linux-x64",
+    "copy-darwin-arm64": "cp out/artifacts/nrz-lsp-aarch64-apple-darwin/nrz-lsp out/nrz-lsp-darwin-arm64 && chmod +x out/nrz-lsp-darwin-arm64",
+    "copy-darwin-x64": "cp out/artifacts/nrz-lsp-x86_64-apple-darwin/nrz-lsp out/nrz-lsp-darwin-x64 && chmod +x out/nrz-lsp-darwin-x64",
+    "copy-linux-arm64": "cp out/artifacts/nrz-lsp-aarch64-unknown-linux-musl/nrz-lsp out/nrz-lsp-linux-arm64 && chmod +x out/nrz-lsp-linux-arm64",
+    "copy-linux-x64": "cp out/artifacts/nrz-lsp-x86_64-unknown-linux-musl/nrz-lsp out/nrz-lsp-linux-x64 && chmod +x out/nrz-lsp-linux-x64",
+    "copy-win32-x64": "cp out/artifacts/nrz-lsp-x86_64-pc-windows-msvc/nrz-lsp.exe out/nrz-lsp-win32-x64.exe",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --main-fields=module,main --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "package": "pnpm vsce package --no-dependencies --baseContentUrl https://github.com/khulnasoft/nrz/raw/HEAD/packages/nrz-vsc",
+    "publish": "pnpm vsce publish --no-dependencies --baseContentUrl https://github.com/khulnasoft/nrz/raw/HEAD/packages/nrz-vsc",
+    "test-compile": "tsc -p ./",
+    "vscode:prepublish": "npm run esbuild-base -- --minify"
+  }
 }

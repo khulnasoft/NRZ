@@ -1,8 +1,8 @@
 {
   "name": "@nrz/eslint-config",
   "version": "0.0.0",
-  "private": true,
   "devDependencies": {
     "@khulnasoft/style-guide": "^5.1.0"
-  }
+  },
+  "private": true
 }

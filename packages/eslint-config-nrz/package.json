@@ -1,41 +1,39 @@
 {
   "name": "eslint-config-nrz",
-  "version": "2.4.0",
   "description": "ESLint config for Nrz",
+  "version": "2.4.0",
+  "author": "KhulnaSoft",
+  "bugs": "https://github.com/khulnasoft/nrz/issues",
+  "dependencies": {
+    "eslint-plugin-nrz": "2.4.0"
+  },
+  "devDependencies": {
+    "@nrz/eslint-config": "0.0.0",
+    "@types/eslint": "^8.56.10"
+  },
+  "exports": {
+    "./flat": "./flat/index.js",
+    ".": "./index.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslintconfig",
+    "nrz",
+    "nrz"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": "^8.55.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/khulnasoft/nrz",
     "directory": "packages/eslint-config-nrz"
   },
-  "bugs": {
-    "url": "https://github.com/khulnasoft/nrz/issues"
-  },
   "scripts": {
     "lint": "eslint ./index.js",
     "lint:prettier": "prettier -c . --cache --ignore-path=../../.prettierignore"
-  },
-  "keywords": [
-    "nrz",
-    "eslint",
-    "nrz",
-    "eslintconfig",
-    "eslint-config"
-  ],
-  "main": "index.js",
-  "exports": {
-    "./flat": "./flat/index.js",
-    ".": "./index.js"
-  },
-  "author": "KhulnaSoft",
-  "dependencies": {
-    "eslint-plugin-nrz": "workspace:*"
-  },
-  "peerDependencies": {
-    "eslint": ">6.6.0"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@nrz/eslint-config": "workspace:*",
-    "@types/eslint": "^8.44.2"
   }
 }

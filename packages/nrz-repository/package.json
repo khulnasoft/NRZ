@@ -1,18 +1,9 @@
 {
   "name": "nrz-repository",
-  "version": "0.0.1",
   "description": "",
-  "bugs": "https://github.com/khulnasoft/nrz/issues",
-  "homepage": "https://nrz.build/repo",
-  "scripts": {
-    "build": "bash scripts/build.sh",
-    "build:release": "bash scripts/build.sh release",
-    "package": "node scripts/publish.mjs",
-    "test": "node --import tsx --test __tests__/*.test.ts"
-  },
-  "keywords": [],
+  "version": "0.0.1",
   "author": "",
-  "license": "MIT",
+  "bugs": "https://github.com/khulnasoft/nrz/issues",
   "devDependencies": {
     "@napi-rs/cli": "^2.16.3",
     "execa": "^8.0.1",
@@ -20,6 +11,9 @@
     "prettier": "^3.2.5",
     "tsx": "4.19.1"
   },
+  "homepage": "https://nrz.build/repo",
+  "keywords": [],
+  "license": "MIT",
   "main": "dist/index.js",
   "napi": {
     "name": "@nrz/repository",
@@ -34,5 +28,11 @@
         "aarch64-pc-windows-msvc"
       ]
     }
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "build:release": "bash scripts/build.sh release",
+    "package": "node scripts/publish.mjs",
+    "test": "node --import tsx --test __tests__/*.test.ts"
   }
 }

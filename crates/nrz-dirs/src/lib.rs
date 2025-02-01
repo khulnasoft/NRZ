@@ -20,8 +20,9 @@ pub fn config_dir() -> Result<Option<AbsoluteSystemPathBuf>, PathError> {
 /// Returns the path to the user's configuration directory.
 ///
 /// This is a wrapper around `dirs_next::config_dir` that also checks the
-///  KHULNASOFT_CONFIG_DIR_PATH` environment variable. If the environment variable
-/// is set, it will return that path instead of `dirs_next::config_dir`.
+///  KHULNASOFT_CONFIG_DIR_PATH` environment variable. If the environment
+/// variable is set, it will return that path instead of
+/// `dirs_next::config_dir`.
 pub fn khulnasoft_config_dir() -> Result<Option<AbsoluteSystemPathBuf>, PathError> {
     if let Ok(dir) = std::env::var("KHULNASOFT_CONFIG_DIR_PATH") {
         return AbsoluteSystemPathBuf::new(dir).map(Some);
