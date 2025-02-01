@@ -1,0 +1,10 @@
+{
+  "name": "@nrz-examples-tests/basic-yarn",
+  "scripts": {
+    "test": "bash ./node_modules/nrz-tests-helpers/setup_example_test.sh basic yarn"
+  },
+  "dependencies": {
+    "nrz-tests-helpers": "workspace:*",
+    "nrz-examples": "workspace:*"
+  }
+}

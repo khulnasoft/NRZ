@@ -1,0 +1,9 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["$IS_SERVER"]
+    }
+  }
+}

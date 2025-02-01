@@ -1,0 +1,7 @@
+{
+  "name": "Next.js",
+  "description": "Minimal Nrz example for learning the fundamentals.",
+  "template": "https://khulnasoft.com/templates/next.js/nrz-next-basic",
+  "featured": true,
+  "boost": true
+}

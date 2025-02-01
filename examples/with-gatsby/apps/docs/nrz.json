@@ -1,0 +1,14 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "extends": [
+    "//"
+  ],
+  "tasks": {
+    "build": {
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    }
+  }
+}

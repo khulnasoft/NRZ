@@ -1,0 +1,11 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "globalEnv": [],
+  "globalPassThroughEnv": [],
+  "pipeline": {
+    "build": {
+      "env": [],
+      "passThroughEnv": []
+    }
+  }
+}

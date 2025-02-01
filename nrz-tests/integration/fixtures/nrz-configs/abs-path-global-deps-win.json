@@ -1,0 +1,4 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "globalDependencies": ["C:\\an\\absolute\\path", "some\\file"]
+}

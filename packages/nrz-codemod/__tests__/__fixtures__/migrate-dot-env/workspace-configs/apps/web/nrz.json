@@ -1,0 +1,11 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      // old
+      "dotEnv": [".env"],
+      "inputs": ["src/**/*.ts"]
+    }
+  }
+}

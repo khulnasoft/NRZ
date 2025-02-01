@@ -1,0 +1,9 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  // invalid config - missing extends
+  "tasks": {
+    "build": {
+      "env": ["IS_SERVER"]
+    }
+  }
+}

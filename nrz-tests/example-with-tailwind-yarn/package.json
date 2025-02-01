@@ -1,0 +1,10 @@
+{
+  "name": "@nrz-examples-tests/with-tailwind-yarn",
+  "scripts": {
+    "test": "bash ./node_modules/nrz-tests-helpers/setup_example_test.sh with-tailwind yarn"
+  },
+  "dependencies": {
+    "nrz-tests-helpers": "workspace:*",
+    "nrz-examples": "workspace:*"
+  }
+}

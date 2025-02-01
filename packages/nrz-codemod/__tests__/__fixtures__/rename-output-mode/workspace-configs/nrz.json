@@ -1,0 +1,12 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "pipeline": {
+    "build-one": {
+      "outputMode": "new-only"
+    },
+    "build-two": {
+      "outputMode": "none"
+    },
+    "build-three": {}
+  }
+}

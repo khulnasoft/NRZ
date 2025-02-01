@@ -1,0 +1,8 @@
+{
+  "name": "SvelteKit",
+  "description": "Monorepo with multiple SvelteKit apps sharing a UI Library",
+  "featured": true,
+  "template": "https://khulnasoft.com/templates/svelte/nrz-sveltekit-starter",
+  "boost": true,
+  "maintainedByCoreTeam": true
+}

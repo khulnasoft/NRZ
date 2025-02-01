@@ -1,0 +1,18 @@
+---
+source: crates/nrz/tests/query.rs
+expression: query_output
+---
+{
+  "data": {
+    "packages": {
+      "items": [
+        {
+          "name": "util",
+          "directDependents": {
+            "length": 1
+          }
+        }
+      ]
+    }
+  }
+}

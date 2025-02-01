@@ -1,0 +1,10 @@
+{
+  "name": "@nrz-examples-tests/kitchen-sink-yarn",
+  "scripts": {
+    "test": "bash ./node_modules/nrz-tests-helpers/setup_example_test.sh kitchen-sink yarn"
+  },
+  "dependencies": {
+    "nrz-tests-helpers": "workspace:*",
+    "nrz-examples": "workspace:*"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["//#dev"],
+      "persistent": true
+    },
+
+    "//#dev": {
+      "persistent": true
+    }
+  }
+}

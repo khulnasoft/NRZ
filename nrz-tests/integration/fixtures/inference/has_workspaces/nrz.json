@@ -1,0 +1,7 @@
+// Has a comment!
+{
+  "$schema": "https://nrz.build/schema.json",
+  "tasks": {
+    "build": {}
+  }
+}

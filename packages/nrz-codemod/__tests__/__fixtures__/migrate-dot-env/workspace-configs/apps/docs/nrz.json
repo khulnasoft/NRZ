@@ -1,0 +1,7 @@
+{
+  "$schema": "https://nrz.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {}
+  }
+}

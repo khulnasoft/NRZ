@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.khulnasoft.sh/khulnasoft.json",
+  "git": {
+    "deploymentEnabled": {
+      "benchmark-data": false,
+      "gh-pages": false
+    }
+  }
+}

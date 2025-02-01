@@ -1,0 +1,11 @@
+---
+source: crates/nrz/tests/query.rs
+expression: query_output
+---
+{
+  "data": {
+    "file": {
+      "path": "main.ts"
+    }
+  }
+}
